@@ -27,8 +27,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!terminos) {
             isValid = false;
             setErrorFor(document.getElementById('terminos'), 'Debes aceptar los términos y condiciones');
+            console.log("no aceptados");
         } else {
             setSuccessFor(document.getElementById('terminos'));
+            console.log("aceptados");
         }
 
         return isValid;
