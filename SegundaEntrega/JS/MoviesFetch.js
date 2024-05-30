@@ -48,7 +48,7 @@ const fetchMoviesGrid = async (page = 1) => {
         // Creamos los elementos HTML para mostrar la película
         const pelicula = createElement('div', 'pelicula');
         const anchor = createElement('a', '');
-        anchor.href = './pages/detalle.html';
+        anchor.href = './HTML/detalle.html';
         const img = createElement('img', 'imgTendencia', {
             src: `https://image.tmdb.org/t/p/w500/${movie.poster_path}`,
             alt: movie.title,
