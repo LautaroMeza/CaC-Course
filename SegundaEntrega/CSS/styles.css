@@ -428,10 +428,8 @@ body{
                     border:2px solid red;
 
                    }
-                   &:not(:focus):invalid ~ .texterror{
-                    visibility: visible;
 
-                   }
+                   
                 }
                 .texterror{
                     color:red;
@@ -449,10 +447,6 @@ body{
                     padding: 10px;
                     .textoCheck{
                         margin-left: 10px;
-                    }
-                    .check:not(:checked) ~ .texterror
-                    {
-                        visibility: visible;
                     }
                 }
                 .boton
