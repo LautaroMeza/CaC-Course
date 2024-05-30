@@ -1,10 +1,9 @@
 /*Esta línea añade un evento al documento que se activa cuando el contenido HTML ha sido completamente cargado y parseado. En otras palabras, se ejecuta cuando el DOM está listo para ser manipulado.*/
-
-    console.log("entre");
-    const form = document.getElementById('formRegis');
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('form');
     /*Aquí se agrega un evento de escucha al formulario que se activa cuando se intenta enviar el formulario. */
     form.addEventListener('submit', (event) => {
-        if (registro()) {
+        if (!validateForm()) {
             console.log('El formulario no es válido. Por favor, corrige los errores.');
             event.preventDefault(); // Esta línea evita que el formulario se envíe si hay errores de validación
         } else {
@@ -12,30 +11,42 @@
             // Aquí puedes enviar los datos del formulario o realizar otras acciones
         }
     });
-    function registro(){
+
+    const validateForm = () => {
         let isValid = true;
 
-        //Validacion de campos
-        isValid = validacampo('nombre', 'El nombre es obligatorio') && isValid;
-        isValid = validacampo('apellido', 'El apellido es obligatorio') && isValid;
-        isValid = validateEmailField('email', 'El correo electrónico no es válido') && isValid;
-        isValid = validacampo('password', 'La contraseña es obligatoria') && isValid;
-        isValid = validacampo('fechaNacimiento', 'La fecha de nacimiento es obligatoria') && isValid;
-        isValid = validacampo('pais', 'El país es obligatorio') && isValid;
+        // Validar campo de nombre
+        isValid = validateField('nombre', 'El nombre es obligatorio') && isValid;
 
-        const terminos = document.getElementById('termYCond').checked;
+        // Validar campo de apellido
+        isValid = validateField('apellido', 'El apellido es obligatorio') && isValid;
+
+        // Validar campo de email
+        isValid = validateEmailField('email', 'El correo electrónico no es válido') && isValid;
+
+        // Validar campo de contraseña
+        isValid = validateField('password', 'La contraseña es obligatoria') && isValid;
+
+        // Validar campo de fecha de nacimiento
+        isValid = validateField('fechaNacimiento', 'La fecha de nacimiento es obligatoria') && isValid;
+
+        // Validar campo de país
+        isValid = validateField('pais', 'El país es obligatorio') && isValid;
+
+        // Validar checkbox de términos y condiciones
+        const terminos = document.getElementById('terminos').checked;
         if (!terminos) {
             isValid = false;
-            setErrorFor(document.getElementById('termYCond'), 'Debes aceptar los términos y condiciones');
+            setErrorFor(document.getElementById('terminos'), 'Debes aceptar los términos y condiciones');
         } else {
-            setSuccessFor(document.getElementById('termYCond'));
+            setSuccessFor(document.getElementById('terminos'));
         }
 
         return isValid;
     };
 
-    function validacampo(id, errorMessage){
-        const field = document.getElement(id);
+    const validateField = (fieldId, errorMessage) => {
+        const field = document.getElementById(fieldId);
         const value = field.value.trim();
         if (value === '') {
             setErrorFor(field, errorMessage);
@@ -46,7 +57,7 @@
         }
     };
 
-    function validateEmailField(fieldId, errorMessage) {
+    const validateEmailField = (fieldId, errorMessage) => {
         const field = document.getElementById(fieldId);
         const email = field.value.trim();
         if (email === '') {
@@ -61,22 +72,22 @@
         }
     };
 
-    function setErrorFor(input, message){
+    const setErrorFor = (input, message) => {
         const formControl = input.closest('div');
-        const errorText = formControl.querySelector('.texterror');
+        const errorText = formControl.querySelector('.error-text');
         formControl.classList.add('error');
         errorText.innerText = message;
         input.focus();
     };
 
-    const setSuccessFor = function(input){
+    const setSuccessFor = (input) => {
         const formControl = input.closest('div');
         formControl.classList.remove('error');
-        const errorText = formControl.querySelector('.texterror');
+        const errorText = formControl.querySelector('.error-text');
         errorText.innerText = '';
     };
 
-    const isEmail = function(email){
+    const isEmail = (email) => {
         const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return re.test(email);
     };
@@ -92,7 +103,7 @@
         });
     });
      // Agrega eventos para borrar las clases de error cuando se selecciona una opción del select
-    form.querySelectorAll('select').forEach(select => {
+     form.querySelectorAll('select').forEach(select => {
         select.addEventListener('change', () => {
             // Obtiene el valor seleccionado del campo de selección
             const value = select.value;
@@ -102,3 +113,4 @@
             }
         });
     });
+});
