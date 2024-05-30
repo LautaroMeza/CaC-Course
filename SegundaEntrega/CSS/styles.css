@@ -1,0 +1,837 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+@keyframes skew-y-shakeing{
+    0% { transform: skewY(-15deg); }
+    3% { transform: skewY(-7deg); }
+    6% { transform: skewY(7deg); }
+    9% { transform: skewY(15deg); }
+    12% { transform: skewY(-7deg); }
+    15% { transform: skewY(7deg); }
+    18% { transform: skewY(15deg); }
+    21% { transform: skewY(7deg); }
+    25% { transform: skewY(0deg); }
+    100% { transform: skewY(0deg); }
+   }
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+/*color invalido*/
+  
+/* Track */
+::-webkit-scrollbar-track {
+    background: rgb(255, 255, 255);
+}
+   
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background:  rgba(78, 0, 0, 100);
+    border-radius: 3px;
+}
+  
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background:rgb(28,0,0);
+    border-radius: 3px;
+}
+
+body{
+    background: rgb(0,0,0);
+    background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(38,0,0,1) 96%, rgba(0,0,0,0.6890405820531338) 100%);
+    color:white;
+}
+
+.header{
+
+    background:rgb(78,0,0);
+    color: rgb(255,220,220);
+    height: 10vh;
+    position:sticky;
+    top:0;
+    z-index: 10;
+    .navegacion{
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-left:40px;
+        margin-right: 40px;
+        padding: 1.5rem 0;
+        .anclalogo{
+            text-decoration: none;
+            color:white;
+            font-weight: 700;
+            font-size:1.2rem;
+        }
+        .anclalogo:hover{
+                animation:skew-y-shakeing 0.5s infinite;
+            }
+        
+        .listanav{
+            list-style: none;
+            display: flex;
+            align-items:center;
+            .listaItem{
+                margin-right:15px;
+                .linkNav{
+                    text-decoration: none;
+                    color:white;
+                    font-weight: 700;
+                    font-size: 1.2rem;
+                    padding: 0.5rem 1rem 0.5rem 1rem;
+                    transition: transform 0.3s, box-shadow 0.3s;
+                }
+                .linkNav:hover {
+                        transform: scale(1.2);
+                        box-shadow: 0 0 13px rgba(0, 0, 0, 0.3);
+                        border-radius: 5px;
+                }
+                .linkNav.iniciarSesion{
+                    background-color: #181419;                 
+                    
+                    border-radius: 5px;
+                     transition: transform 0.3s, box-shadow 0.3s;
+                &:hover{
+                    background-color:  rgba(242, 0, 0, 0.100);
+                } 
+              }                 
+         
+            }
+        }
+    }
+}
+/*Buscador*/
+.main{
+    
+    .sectionPrincipal{
+        color:white;
+        background:linear-gradient(to right top, #0000008a, #0000008a), url(../img/banner2.jpg);
+        background-size: cover;
+        background-position: center;         
+        height: 90vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        .tituloPrincipal{
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .subtituloPrincipal{
+            font-size: 2.2rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+        }
+        .botonRegistrarse{
+            background-color: rgba(255, 0, 0, 0.448);
+            color:white;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .botonRegistrarse:hover{
+            background-color: rgba(255, 0, 0, 0.448);
+            transform: scale(1.2);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }        
+    }
+    .buscadorPrincipal{
+        
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .tituloSection{
+            font-size: 3vw;
+            font-weight: 500;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+        .buscadorPeliculas{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top:0.5rem;
+            margin-bottom: 0.5rem;
+            .inputBuscador{
+                border: 1px solid white;
+                border-radius: 15px;
+                color:black;
+                font-size: 2vw;
+                height: 50px;
+                margin: 20px 0px;
+                padding: 0px 20px;
+                width:50vw;
+            }
+            .botonBuscador{
+                background-color: rgba(255, 0, 0, 0.448);
+                border: 1px solid white;
+                border-radius: 15px;
+                color:white;
+                height: 50px;
+                margin: 20px 20px;
+                padding: 0px 20px;
+                font-size: 2vw;
+                font-weight: 700;
+                text-align: center;
+                transition: transform 0.3s, box-shadow 0.3s;
+            }
+            .botonBuscador:hover{
+                background-color: rgba(255, 0, 0, 0.448);
+                transform: scale(0.85);
+                
+            }
+        }
+    }
+    #tendencias{
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 10px;
+        .tituloSection{
+            font-size: 2.5vw;
+            font-weight: 600;
+            margin-bottom: 40px;
+        }
+        .peliculas{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap:60px;
+            a{
+                text-decoration: none;
+                color:white;
+                .pelicula{
+                    width: 255px;
+                    height: 355px;
+                    position:relative;
+                    overflow: hidden;
+                    border-radius: 30px;
+                    transition: all 0.5s ease;
+                    .imgTendencia{
+                        width:100%;
+                        height: 100%;
+                        object-fit: cover;
+                        border-radius:30px;
+                    }
+                    .tituloPelicula{
+                        z-index: 2;
+                        position:absolute;
+                        text-align: center;
+                        top:50%;
+                        left:50%;
+                        max-width: 25vw;
+                        width: 100%;
+                        transform: translateY(-50%) translateX(-50%);
+                        h4{
+                            font-size: 1.5vw;
+                            font-weight: bold;
+                            opacity: 0;
+                            margin-bottom: 0.5rem;
+                            transition: opacity 0.5s ease-in-out;
+                        }
+                    }                
+                }
+                .pelicula:hover{
+                    box-shadow: 0 0 30px rgba(235, 0, 0, 0.448);
+                    transform: scale(1.1);
+                }
+                .pelicula:hover .tituloPelicula{
+                    width: 100%;
+                    height: 100%;
+                    backdrop-filter: blur(30px);
+                    display:flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                .pelicula:hover h4{
+                    width: 100%;
+                    opacity: 1;
+                }
+            }
+        }
+        .boton{
+            border: 1px solid white;
+            box-sizing: content-box;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            margin-left: 10px;
+            background-color: rgba(235, 0, 0, 0.448);
+            color:white;
+            padding: 0.5vw 0.5vw;
+            border-radius: 10px;
+            font-size: 1vw;
+            font-weight: 500;
+            transition: transform 0.3s, box-shadow 0.3s;         
+            
+        }
+        .boton:hover{
+            background-color: rgba(255, 0, 0, 0.448);
+            transform: scale(1.1);
+            box-shadow: 0 0 12px rgba(255, 0, 0, 0.9);
+        }
+        
+    }
+    .peliculasAclamadas{
+        width: 100%;
+        margin:0 auto;
+        text-align: center;
+        margin-top:50px;
+        margin-bottom: 10px;        
+        .tituloSection{
+            font-size: 2.5vw;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+        .aclamadas{
+            overflow-x: scroll;
+            overflow-y: hidden;
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding: 0px 0px 40px 0px;
+            .peliculaItem{
+                border-radius: 25px;
+                width:170px;
+                min-width: 170px;
+                font-size: 20px;
+                cursor:pointer;
+                margin-left: 30px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                .imgAclamada{
+                    border-radius: 5%;
+                    width: 95%;
+                    height: 95%;
+                    object-fit: cover;
+                }
+                
+            }
+        }
+    }
+}
+.footer{
+    background-color: rgba(38, 0, 0, 100);
+    color:white;
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .listanav{
+        list-style: none;
+        display: flex;
+        align-items: center;
+ 
+        .listaItem{
+            margin-left: 20px;
+            .linkNav{
+                text-decoration: none;
+                color:white;
+                font-weight: 700;
+                font-size: 1.2vw;
+            }
+            .administradorPeliculas{
+                background-color: black;
+                color: white;
+                padding: 0.5vw 1vw;
+                border-radius: 5px;
+            }
+            
+        }
+    }
+    .flechaArriba{
+        position:fixed;
+        bottom:20px;
+        right:20px;
+        color:wheat;
+        cursor: pointer;
+    }
+}
+
+
+/*Pagina para Registro e inicio de sesion*/
+.bodyRegistrarse{
+        height: 100vh;
+        background:linear-gradient(to right top, #24242473,#24242473),url("../img/Fondo-Registro.jpg");
+        background-size: cover;
+        background-position: center;
+        .headerRegistrarse{
+            color:white;
+            height: 8vw;
+            padding:30px;
+        .anclalogo{
+            text-decoration: none;
+            color:white;
+            font-weight: 700;
+            font-size: 1.4vw;
+            &:hover{
+                animation: tilt-n-move-shaking 0.5 infinite;
+            }
+        }
+    }
+    .main{
+        .seccionRegistro{
+            background-color: rgba(11, 7, 37, 0.567);
+            color:white;
+            width: 30%;
+            margin:0 auto;
+            border-radius: 9px;
+            padding: 40px 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+            font-size: 1.5rem;
+            .tituloRegistro{
+                font-size: 2.5rem;
+                font-weight: 650;
+                margin-bottom: 20px;
+            }
+            #formRegis{
+                width: 100%;
+                padding: 40px;
+                color:white;
+               
+                #textbox,#pais{
+                    width: 100%;
+                    margin-bottom: 10px;
+                    height: 40px;
+                    padding: 0px 20px;
+                    font-size: 1rem;
+                    border-radius: 20px;
+                    color:white;
+                    border: 2px solid rgb(0, 0, 53);
+                    background-color:rgba(113, 120, 113, 0.907);
+                    outline: none;
+                    transition: transform 0.3s, box-shadow 0.3s;
+                    &::placeholder{
+                        color:white;
+                    }                    
+                    &:hover {
+                      background-color: rgba(255, 255, 255, 0.3);
+                      transform: scale(0.95);
+                      box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+                   }
+                   &:not(:focus):invalid{
+                    border:2px solid red;
+
+                   }
+                   &:not(:focus):invalid ~ .texterror{
+                    visibility: visible;
+
+                   }
+                }
+                .texterror{
+                    color:red;
+                    font-size: 0.8rem;
+                    margin-top: 0px;
+                    margin-bottom: 0px;
+                    visibility: hidden;
+                }
+                .terminos{
+                    font-size: 0.8rem;
+                    display:flex;
+                    align-items: center;
+                    margin-bottom: 20px;
+                    margin-top: 0px;
+                    padding: 10px;
+                    .textoCheck{
+                        margin-left: 10px;
+                    }
+                    .check:not(:checked) ~ .texterror
+                    {
+                        visibility: visible;
+                    }
+                }
+                .boton
+                {
+                    width: 100%;
+                    height: 3.5vw;
+                    box-sizing: content-box;
+                    background-color: rgb(113, 122, 113);
+                    border: 2px solid rgb(0, 0, 53);
+                    border-radius: 7px;
+                    color:white;
+                    padding: auto;
+                    font-size: 1.5rem;
+                    font-weight: 400;
+                    margin-top: 20px;
+                    margin-bottom: 10px;
+                    transition: transform 0.3s, box-shadow 0.3s;
+                    &:hover {
+                      background-color: rgba(255, 255, 255, 0.3);
+                      transform: scale(0.95);
+                      box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+                   }
+                }
+                .ayuda{
+                    margin-top:40px;
+                    font-size: 1rem;
+                    text-decoration: none;
+                    color: #787878;
+                    font-weight:400;
+                }
+            }
+        }
+    }
+}
+
+/*Pagina del detalle*/
+.mainDetalle{
+
+    .detalle{
+        padding-top: 50px;
+        background:linear-gradient(to right top, #6d6969a7, #6d6969a7),url("../img/KunFuPanda4.jpg");
+        background-size: cover;
+        background-position: center;
+        height: 50vw;
+        .contenedorDetalle{
+            width: 75%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            column-gap: 60px;
+            img{
+                border-radius: 25px;
+            }
+            .textoDetalle{
+                h1{
+                    font-size:2.2rem;
+                    font-weight: 700;
+                }
+                h2{
+                    margin-top: 20px;
+                }
+                .contenedorCreditos{
+                    margin-top: 20px;
+                    display: flex;
+                    justify-content: space-between;
+                }
+            }
+        }
+    }
+    .trailer{
+        padding-top: 150px;
+        padding-bottom: 100px;
+        width:75%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        column-gap:70px;
+        .contenedorInfo{
+            .redes{
+                margin-bottom:20px;
+                ul{
+                    list-style: none;
+                    display: flex;
+                    column-gap:20px;
+                    li{
+                        a{
+                            color:white;
+                            font-size: 2.5rem;
+                            margin-right: 50px;
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+            .info{
+                table{
+                    width:100%;
+                    tr{
+                        font-size: 1.5rem;
+                        td{
+                            font-size: 1.2rem;
+                            padding:15px 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+hr{
+    border: 1px solid rgba(235, 0, 0, 0.448);
+    width:80%;
+    margin:0 auto;
+    margin-top:40px;
+}
+
+/*ADAPTACION PARA CELULAR O TABLET*/
+
+/*DETALLE.HTML*/
+@media screen and (max-width:1200px){
+    .mainDetalle{
+        .detalle{
+            height: initial;
+            .contenedorDetalle{
+                flex-direction: column;
+                row-gap: 20px;
+                img{
+                    width: 100%;
+                    height: 300px;
+                }
+                .textoDetalle{
+                    h1{
+                        font-size: 1.5rem;
+                    }
+                    h2{
+                        font-size: 1rem;
+                    }
+                    .contenedorCreditos{
+                        flex-direction: column;
+                        row-gap: 10px;
+                    }
+                }
+            }
+        }
+        .trailer{
+            width:95%;
+            padding-top:50px;
+            padding-bottom: 50px;
+            flex-direction: column;
+            row-gap: 20px;
+            .contenedorTrailer{
+                width: 100%;
+                h2{
+                    margin-bottom: 20px;
+                }
+                iframe{
+                    width: 100%;
+                    height: 300px;
+                
+                }
+            }
+            .contenedorInfo{
+                width: 100%;
+                .redes{
+                    width: 100% ;
+                    ul{
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                       
+                        li{
+                            a{
+                                font-size: 2rem;
+                                margin-right: 20px;
+                            }
+                        }
+                    }
+                }
+                .info{
+                    table{
+                        tr{
+                            td{
+                                font-size: 1rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*REGISTRO.HTML E INICIO DE SESION*/
+
+@media (max-width: 1200px) {
+    .bodyRegistrarse{
+        .headerRegistrarse{
+            padding:20px;
+            .anclalogo{
+                font-size: 1rem;
+            }
+        }
+        .main{
+            .seccionRegistro{
+                width: 95%;
+                padding: 10px 10px;
+                .tituloRegistrarse{
+                    font-size: 2rem;
+                }
+                #formRegis{
+                width: 100%;
+                text-align: center;
+               
+                input:not(.check,.boton),select{
+                    width: 80%;
+                    height: 35px;
+                    font-size: 1rem;
+                }
+                .terminos{
+                    width: 80%;
+                    margin:0 auto;
+                    font-size: 0.7rem;
+                }
+                .boton{
+                    margin-top: 20px;
+                    margin-bottom: 20px;
+                    width: 70%;
+                    padding: 0.8rem 0.8rem;
+                    font-size: 0.8rem;
+                }
+                .ayuda{
+                    text-align: left;
+                    font-size: 0.8rem;
+                }
+               }
+               
+            }
+        }
+    }
+
+}
+
+/*INDEX*/
+@media (max-width: 768px) {
+    .header{
+        height: initial;
+        .navegacion{
+            margin-left:10px;
+            margin-right: 10px;
+            flex-direction: column;
+            row-gap: 20px;
+            .anclalogo{
+                font-size: 1.2rem;
+                font-weight:700;
+            }
+            .listanav{
+               
+                padding:initial;
+                .listaItem{
+                    .linkNav{
+                        font-weight: 400;
+                        margin-right: initial;
+                        font-size: 1rem;
+                        padding: 0.2rem;
+                        
+                    }
+                  
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .main{
+        .sectionPrincipal{
+            height: 60vh;
+            .tituloPrincipal{
+                font-size: 2.5rem;
+            }
+            .subtituloPrincipal{
+                font-size: 1.5rem;
+            }
+            .botonRegistrarse{
+                padding: 0.8rem 1.5rem;
+                font-size: 1rem;
+            }
+        }
+        .buscadorPrincipal{
+            height: 30vh;
+            .tituloSection{
+                font-size: 1.6rem;
+            }
+            .buscadorPeliculas{
+                .inputBuscador{
+                    font-size: 1rem;
+                    height: 40px;
+                    width: 300px;
+                }
+                .botonBuscador{
+                    height: 40px;
+                    padding:0 15px;
+                    font-size: 1rem;
+                }
+            }
+        }
+        #tendencias{
+            width: 95%;
+            .tituloSection{
+                font-size: 2rem;
+            }
+            .peliculas{
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+              
+                a{
+                    width: 100%;
+                    .pelicula{
+                        width: 100%;
+                        height: 500px;
+                       
+                        .tituloPelicula{
+                            h4 {
+                                font-size: 1rem;
+                            }
+                        }
+                       
+                    }
+                }
+              
+               
+            }
+            .boton{
+                padding: 0.8rem 0.8rem;
+                font-size: 0.8rem;
+            }
+        }
+        .peliculasAclamadas{
+            .tituloSection{
+                font-size: 2rem;
+            }
+            .aclamadas{
+                .peliculaItem{
+                    width: 150px;
+                    min-width: 150px;
+                    font-size: 15px;
+                    margin-left: 20px;
+                    .imgAclamada{
+                        width: 90%;
+                        height: 90%;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 768px) {
+    .footer{
+        height: initial;
+        padding-top:15px;
+        padding-bottom: 20px;
+        .listanav{
+            flex-direction: column;
+          
+            row-gap: 15px;
+            .listaItem{
+                
+                .linkNav{
+                    font-size: 1rem;
+                }
+                .administradorPeliculas{
+                    padding: 0.5rem 0.8rem;
+                }
+            }
+        }
+    }
+}
+
+
