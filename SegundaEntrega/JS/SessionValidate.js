@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Encuentra el elemento padre del campo de entrada
         const formControl = input.closest('div');
         // Encuentra el elemento de texto de error dentro del elemento padre
-        const errorText = formControl.querySelector('.error-text');
+        const errorText = formControl.querySelector('.texterror');
         // Agrega la clase de error al elemento padre para resaltar el campo
         formControl.classList.add('error');
         // Establece el texto del mensaje de error
@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Elimina la clase de error del elemento padre
         formControl.classList.remove('error');
         // Encuentra el elemento de texto de error dentro del elemento padre
-        const errorText = formControl.querySelector('.error-text');
+        const errorText = formControl.querySelector('.texterror');
         // Establece el texto de error como vacío
         errorText.innerText = '';
     };
