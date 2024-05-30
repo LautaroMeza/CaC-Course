@@ -21,23 +21,23 @@
             <form id="formRegis" action="" method="get">
                 <h2 class="tituloRegistro">Registro</h2>
                 <div>
-                    <input type="text" placeholder="Nombre" id="textbox" name="nombre" pattern="[A-Za-z]{2,}">
+                    <input type="text" placeholder="Nombre" class="textbox" name="nombre" id="nombre" pattern="[A-Za-z]{2,}">
                     <div class="texterror"><span>Nombre invalido</span></div>
                 </div>
                 <div>
-                    <input type="text" placeholder="Apellido" id="textbox" name="apellido" pattern="[A-Za-z]{2,}">
+                    <input type="text" placeholder="Apellido" class="textbox" name="apellido" id="apellido" pattern="[A-Za-z]{2,}">
                     <div class="texterror"><span>Apellido invalido</span></div>
                 </div>
                 <div>
-                    <input type="email" placeholder="Email" id="textbox" name="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$">
+                    <input type="email" placeholder="Email" class="textbox" name="email" id="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$">
                     <div class="texterror"><span>Correo invalido</span></div>
                 </div>
                 <div>
-                    <input type="password" placeholder="Contraseña" id="textbox" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                    <input type="password" placeholder="Contraseña" class="textbox" name="password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
                     <div class="texterror"><span>La contraseña debe tener al menos 8 caracteres, una mayuscula, una minuscula y un numero</span></div>
                 </div>
                 <div>
-                    <input type="date" placeholder="Fecha de Nacimiento (dd/mm/aaaa)" id="textbox" name="fechaNacimiento">
+                    <input type="date" placeholder="Fecha de Nacimiento (dd/mm/aaaa)" class="textbox" id ="fechaNacimiento" name="fechaNacimiento">
                     <div class="texterror"><span>Fecha invalida</span></div>
                 </div>
                 <div>

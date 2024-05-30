@@ -404,7 +404,7 @@ body{
                 padding: 40px;
                 color:white;
                
-                #textbox,#pais{
+                .textbox,#pais{
                     width: 100%;
                     margin-bottom: 10px;
                     height: 40px;
