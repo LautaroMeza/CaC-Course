@@ -69,14 +69,14 @@ document.addEventListener('DOMContentLoaded', () => {
         input.focus();
     };
 
-    const setSuccessFor = (input) => {
+    const setSuccessFor = function(input){
         const formControl = input.closest('div');
         formControl.classList.remove('error');
         const errorText = formControl.querySelector('.texterror');
         errorText.innerText = '';
     };
 
-    const isEmail = (email) => {
+    const isEmail = function(email){
         const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return re.test(email);
     };
