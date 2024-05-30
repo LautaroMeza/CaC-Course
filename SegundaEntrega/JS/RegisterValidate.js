@@ -1,5 +1,5 @@
 /*Esta línea añade un evento al documento que se activa cuando el contenido HTML ha sido completamente cargado y parseado. En otras palabras, se ejecuta cuando el DOM está listo para ser manipulado.*/
-document.addEventListener('DOMContentLoaded', () => {
+
     console.log("entre");
     const form = document.getElementById('formRegis');
     /*Aquí se agrega un evento de escucha al formulario que se activa cuando se intenta enviar el formulario. */
@@ -101,5 +101,4 @@ document.addEventListener('DOMContentLoaded', () => {
                 setSuccessFor(select);
             }
         });
-    }); 
-});
+    });
