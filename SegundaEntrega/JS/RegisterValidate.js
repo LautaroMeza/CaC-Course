@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return re.test(email);
     };
       // Agrega eventos para borrar las clases de error cuando se completa el input o se presiona Tab
-      form.querySelectorAll('input').forEach(input => {
+    /*  form.querySelectorAll('input').forEach(input => {
         input.addEventListener('input', () => {
             // Obtiene el valor del campo y elimina los espacios en blanco al principio y al final
             const value = input.value.trim();
@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
      // Agrega eventos para borrar las clases de error cuando se selecciona una opción del select
-     form.querySelectorAll('select').forEach(select => {
+    form.querySelectorAll('select').forEach(select => {
         select.addEventListener('change', () => {
             // Obtiene el valor seleccionado del campo de selección
             const value = select.value;
@@ -102,5 +102,5 @@ document.addEventListener('DOMContentLoaded', () => {
                 setSuccessFor(select);
             }
         });
-    });
+    }); */
 });
