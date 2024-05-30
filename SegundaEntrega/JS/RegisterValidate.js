@@ -34,12 +34,12 @@ document.addEventListener('DOMContentLoaded', () => {
         isValid = validateField('pais', 'El país es obligatorio') && isValid;
 
         // Validar checkbox de términos y condiciones
-        const terminos = document.getElementById('terminos').checked;
+        const terminos = document.getElementById('termYCond').checked;
         if (!terminos) {
             isValid = false;
-            setErrorFor(document.getElementById('terminos'), 'Debes aceptar los términos y condiciones');
+            setErrorFor(document.getElementById('termYCond'), 'Debes aceptar los términos y condiciones');
         } else {
-            setSuccessFor(document.getElementById('terminos'));
+            setSuccessFor(document.getElementById('termYCond'));
         }
 
         return isValid;
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const setErrorFor = (input, message) => {
         const formControl = input.closest('div');
-        const errorText = formControl.querySelector('.error-text');
+        const errorText = formControl.querySelector('.texterror');
         formControl.classList.add('error');
         errorText.innerText = message;
         input.focus();
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const setSuccessFor = (input) => {
         const formControl = input.closest('div');
         formControl.classList.remove('error');
-        const errorText = formControl.querySelector('.error-text');
+        const errorText = formControl.querySelector('.texterror');
         errorText.innerText = '';
     };
 
