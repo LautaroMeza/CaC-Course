@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
         isValid = validacampo('pais', 'El país es obligatorio') && isValid;
 
         const terminos = document.getElementById('terminos').checked;
+        console.log(terminos);
         if (!terminos) {
             isValid = false;
             setErrorFor(document.getElementById('terminos'), 'Debes aceptar los términos y condiciones');
