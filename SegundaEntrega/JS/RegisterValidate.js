@@ -23,14 +23,14 @@ document.addEventListener('DOMContentLoaded', () => {
         isValid = validacampo('fechaNacimiento', 'La fecha de nacimiento es obligatoria') && isValid;
         isValid = validacampo('pais', 'El país es obligatorio') && isValid;
 
-        const terminos = document.getElementById('terminos').checked;
+        const terminos = document.getElementById('termYCond').checked;
         console.log(terminos);
         if (!terminos) {
             isValid = false;
-            setErrorFor(document.getElementById('terminos'), 'Debes aceptar los términos y condiciones');
+            setErrorFor(document.getElementById('termYCond'), 'Debes aceptar los términos y condiciones');
             console.log("no aceptados");
         } else {
-            setSuccessFor(document.getElementById('terminos'));
+            setSuccessFor(document.getElementById('termYCond'));
             console.log("aceptados");
         }
 
