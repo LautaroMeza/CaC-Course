@@ -12,8 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Aquí puedes enviar los datos del formulario o realizar otras acciones
         }
     });
-
-    const registro = () => {
+    function registro(){
         let isValid = true;
 
         //Validacion de campos
@@ -35,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return isValid;
     };
 
-    const validacampo = (id, errorMessage) => {
+    function validacampo(id, errorMessage){
         const field = document.getElement(id);
         const value = field.value.trim();
         if (value === '') {
@@ -47,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    const validateEmailField = (fieldId, errorMessage) => {
+    function validateEmailField(fieldId, errorMessage) {
         const field = document.getElementById(fieldId);
         const email = field.value.trim();
         if (email === '') {
@@ -62,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    const setErrorFor = (input, message) => {
+    function setErrorFor(input, message){
         const formControl = input.closest('div');
         const errorText = formControl.querySelector('.texterror');
         formControl.classList.add('error');
