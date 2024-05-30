@@ -1,11 +1,11 @@
-/*Esta línea añade un evento al documento que se activa cuando el contenido HTML ha sido completamente cargado y parseado. En otras palabras, se ejecuta cuando el DOM está listo para ser manipulado.*/
 document.addEventListener('DOMContentLoaded', () => {
-    const form = document.querySelector('form');
-    /*Aquí se agrega un evento de escucha al formulario que se activa cuando se intenta enviar el formulario. */
+    const form = document.getElementById('formRegis');
+    
     form.addEventListener('submit', (event) => {
         if (!validateForm()) {
             console.log('El formulario no es válido. Por favor, corrige los errores.');
             event.preventDefault(); // Esta línea evita que el formulario se envíe si hay errores de validación
+            alert("Error al Registrar");
         } else {
             console.log('El formulario es válido. Enviar datos...');
             // Aquí puedes enviar los datos del formulario o realizar otras acciones
@@ -15,22 +15,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const validateForm = () => {
         let isValid = true;
 
-        // Validar campo de nombre
+        //Validacion de campos
         isValid = validateField('nombre', 'El nombre es obligatorio') && isValid;
-
-        // Validar campo de apellido
         isValid = validateField('apellido', 'El apellido es obligatorio') && isValid;
-
-        // Validar campo de email
         isValid = validateEmailField('email', 'El correo electrónico no es válido') && isValid;
-
-        // Validar campo de contraseña
         isValid = validateField('password', 'La contraseña es obligatoria') && isValid;
-
-        // Validar campo de fecha de nacimiento
         isValid = validateField('fechaNacimiento', 'La fecha de nacimiento es obligatoria') && isValid;
-
-        // Validar campo de país
         isValid = validateField('pais', 'El país es obligatorio') && isValid;
 
         // Validar checkbox de términos y condiciones

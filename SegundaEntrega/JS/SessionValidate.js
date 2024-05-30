@@ -1,20 +1,20 @@
-// Espera a que el DOM se cargue completamente
+
 document.addEventListener('DOMContentLoaded', () => {
-    // Selecciona el formulario en el DOM
+
     const form = document.querySelector('form');
 
-    // Agrega un evento de escucha para cuando se envía el formulario
+
     form.addEventListener('submit', (event) => {
-        // Si la validación del formulario no es exitosa
+        
         if (!validateForm()) {
-            // Muestra un mensaje en la consola indicando que el formulario no es válido
+            
             console.log('El formulario no es válido. Por favor, corrige los errores.');
-            // Evita que el formulario se envíe
-            event.preventDefault(); // Evita que el formulario se envíe si hay errores de validación
+            alert("Por favor complete los datos");
+            event.preventDefault();
         } else {
-            // Si la validación del formulario es exitosa, muestra un mensaje en la consola
+     
             console.log('El formulario es válido. Enviar datos...');
-            // Aquí puedes enviar los datos del formulario o realizar otras acciones
+            alert("Bienvenido!");
         }
     });
 
@@ -124,9 +124,9 @@ document.addEventListener('DOMContentLoaded', () => {
      // Agrega eventos para borrar las clases de error cuando se selecciona una opción del select
      form.querySelectorAll('select').forEach(select => {
         select.addEventListener('change', () => {
-            // Obtiene el valor seleccionado del campo de selección
+            
             const value = select.value;
-            // Si se selecciona una opción, elimina cualquier mensaje de error
+ 
             if (value !== '') {
                 setSuccessFor(select);
             }
